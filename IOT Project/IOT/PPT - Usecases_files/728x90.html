@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://dco-assets.everestads.net/ics-campaign//5031/t/8980/12/728x90.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Ad</title>
+    <link rel="stylesheet" href="./style.min.css">
+    <script type="text/javascript" src="./AMOLibrary.js.download"></script>
+    <script src="./gsap.min.js.download" charset="utf-8"></script>
+    <script src="./script.min.js.download" charset="utf-8"></script>
+    <style media="screen">
+      @font-face {
+          font-family: SegoePro-Semibold;
+          src: url('fonts/SegoePro-Semibold.woff') format("woff");
+      }
+      .segoeProSemibold { font-family: SegoePro-Semibold; }
+    </style>
+    <!--
+      Available Classes:-
+        For Images :-
+          .asset        -Image Center Align(Image can shrink according to the container but will expand beyond its original size)
+          .asset-top    -Image Top Center Align(Image can shrink according to the container but will expand beyond its original size)
+          .asset-left
+
+    -->
+    <style media="screen">
+      #ad {
+        width: 728px;
+        height: 90px;
+        font-family: Arial,Helvetica,sans-serif;
+        background-color: #0078d3;
+      }
+      .frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+      }
+      #cta { background-color: #0078d4; }
+      #cta:hover { background-color: #0078d4; }
+    </style>
+  </head>
+  <body>
+    <div class="ad" id="ad" style="background-color: rgb(236, 237, 239);"><div id="backgroundImage" class="asset frame"><img src="./9ee1a94c4687128cb2f21bdae89812de.png"></div><div id="logoImage" class="asset frame"><img src="./f71b18ba3153b509865445c7b4706219.png"></div><div id="textfields" dir="auto" class="text-left segoeProSemibold" style="top:10px; left:176px; width:280px; height:70px; font-size:16px; line-height:1.2; color:#000;"><span><font id="headlineText" style="display: inline-block; min-height: 20px; padding-bottom: 0px; width: 100%; font-size: 15px;" data-content="Integrate and manage your workloads with services designed for hybrid cloud environments " data-height="">Integrate and manage your workloads with services designed for hybrid cloud environments </font><font id="subheadlineText" style="display: none; font-size: 85%;" data-content="na" data-height="">na</font></span></div><div id="cta" dir="auto" class="text segoeProSemibold" data-style="text-align:center;padding:3px 20px;" style="top: 0px; right: 0px; width: 30px; height: 90px; font-size: 0px; color: rgb(255, 255, 255); white-space: nowrap; transform: translate(0px, 0px);"><span style="text-align:center;padding:3px 20px;">Try Azure&nbsp;❯</span></div><div id="ctaArrow" class="text segoeProSemibold" style="top: 45px; left: 708px; font-size: 20px; color: rgb(255, 255, 255); transform: translate(0px, 0px);"><span id="ctaTextElem">❯</span></div><div id="overlay" style="top: 0px; left: 0px; width: inherit; height: inherit; background-color: rgb(255, 255, 255); opacity: 0; transition: all 0.5s ease 0s; visibility: hidden;"></div><div class="ad-borders" style="z-index: 100;"><div class="ad-border-top" style="position:absolute;display:inline-block;width:728px;border-top:2px solid #d1d1d1;top:0px;left:0px;"></div><div class="ad-border-right" style="position:absolute;display:inline-block;height:90px;border-left:2px solid #d1d1d1;top:0px;left:726px;"></div><div class="ad-border-bottom" style="position:absolute;display:inline-block;width:728px;border-top:2px solid #d1d1d1;top:88px;left:0px;"></div><div class="ad-border-left" style="position:absolute;display:inline-block;height:90px;border-left:2px solid #d1d1d1;top:0px;left:0px;"></div></div></div>
+    <div id="loadFont" style="width:0;height:0;overflow:hidden;">
+      <div class="segoeProSemibold" style="color:transparent;">segoeProSemibold</div>
+    </div>
+    <script type="text/javascript">
+      var ad = new Ad({
+        root: document.querySelector('#ad'),
+        width: 728,
+        height: 90,
+        borderWidth: 2,
+        borderColor: '#d1d1d1'
+      });
+      function setupAd() {
+        ad.contentSetup({
+          cam: {
+            backgroundImage: 'assets/728x90_Tessellated_BackgroundImage.png',
+            logoImage: 'assets/728x90_MSFT_Logo.png',
+            headlineText: 'Why Azure?',
+            subheadlineText:  'Start building apps today with 25+ free services and a $200 credit',
+            color: '#000000|#ECEDEF|#fff', //#0078d4
+            styleProperties: 'na',
+            ctaText: 'Try Azure free',
+            clickURL: 'https://azure.microsoft.com/',
+            impressionTracker: 'images/1x1.png'
+          },
+          feed: [
+            {
+              name: 'ms'
+            }
+          ],
+          staticData: {
+            // ref:'ref.png',
+          },
+          beforeLoad: function(data){
+            var replaceMacro = function(text, data) {
+              var macros = text.match(/\!\{(.*?)\}/g);
+              if(macros) {
+                macros.forEach(function(macro){
+                  var macroText = macro.split('!{').join('').split('}').join('');
+                  for(var key in data) { if(key == macroText) { macroText = data[key]; } }
+                  text = text.split(macro).join(macroText);
+                });
+              }
+              return text;
+            }
+            data.map(function(content){
+              content.ctaText +='&nbsp;&#x276F;';
+              if(content.headlineText.split('|').length > 1) {
+                  var fontSize = content.headlineText.split('|')[1];
+                  content.headlineText = content.headlineText.split('|')[0];
+                  if(fontSize) ad.root.querySelector('#headlineText').style.fontSize = fontSize + 'px';
+              }
+              if(content.subheadlineText.split('|').length > 1) {
+                  var fontSize = content.subheadlineText.split('|')[1];
+                  content.subheadlineText = content.subheadlineText.split('|')[0];
+                  if(fontSize) ad.root.querySelector('#subheadlineText').style.fontSize = fontSize + 'px';
+              }
+              if(content.headlineText.toLowerCase() === 'na') {
+                ad.root.querySelector('#headlineText').style.display = 'none';
+              }
+              if(content.subheadlineText.toLowerCase() === 'na') {
+                ad.root.querySelector('#subheadlineText').style.display = 'none';
+              }
+              ad.root.querySelector('#cta').style.whiteSpace = 'nowrap';
+            });
+            return data;
+          }
+        }, function(data){
+          var adData = data[0], adClickUrl = adData['clickURL'];
+          let elemText = document.querySelector('#ctaArrow span');
+          elemText.id = 'ctaTextElem';
+          ad.root.addEventListener("click", function(e) {
+            let elemText = getElementText(adData, e);
+            if('button' in e.target.dataset) { } else { amo.onDynAdClick(adData.feedData, "CLICK", adClickUrl, elemText); }
+          });
+          if(adData.styleProperties && adData.styleProperties.toLowerCase() != 'na') {
+            try {
+              eval('var styleProperties = ' + adData.styleProperties);
+              if(styleProperties && typeof styleProperties == 'object')
+              for(var i in styleProperties) {
+                gsap.set(i, styleProperties[i]);
+              }
+            } catch(e) {  }
+          }
+          if(adData['subheadlineText'].toLowerCase() == 'na' ||
+             adData['subheadlineText'].toLowerCase() == '&#32;' || 
+             ad.root.querySelector('#subheadlineText').textContent === '' || 
+             adData['subheadlineText'].toLowerCase() == ' ') {
+            ad.root.querySelector('#subheadlineText').style.display = 'none';
+            ad.root.querySelector('#headlineText').style.paddingBottom = '0';
+          }
+          if(adData.impressionTracker.toLowerCase() != 'na'){
+            var impressionTracker = adData.impressionTracker.split('^')[0];
+            var isn = 'data' in amo && 'isn' in amo.data ? amo.data.isn : '';
+            var trackingCode = 'data' in amo && 'data' in amo.data && 'atsParams' in amo.data.data && 'x2_tracking_code_5' in amo.data.data.atsParams ? amo.data.data.atsParams.x2_tracking_code_5 : '';
+            if(isn.length) { impressionTracker = impressionTracker.replace('(t_td_isn)', isn); }
+            if(trackingCode.length){ impressionTracker = impressionTracker.replace('$(t_qp_TC_5)', trackingCode); }
+            ad.loadAssets(impressionTracker, function(assets){ });
+          }
+          if(adData.impressionTracker.indexOf('^') != -1){
+            var impressionTrackerAAM = adData.impressionTracker.split('^')[1];
+            var isn = 'data' in amo && 'isn' in amo.data ? amo.data.isn : '';
+            var trackingCode = 'data' in amo && 'data' in amo.data && 'atsParams' in amo.data.data && 'x2_tracking_code_5' in amo.data.data.atsParams ? amo.data.data.atsParams.x2_tracking_code_5 : '';
+            if(isn.length) { impressionTrackerAAM = impressionTrackerAAM.replace('(t_td_isn)', isn); }
+            if(trackingCode.length){ impressionTrackerAAM = impressionTrackerAAM.replace('$(t_qp_TC_5)', trackingCode); }
+            ad.loadAssets(impressionTrackerAAM, function(assets){ });
+          }
+          ad.layers.cta.style.webkitTransform = '';
+          ad.layers.cta.style.transform = '';
+          ad.layers.textfields.style.color = adData['color'].split('|')[0];
+          document.querySelector('#ad').style.backgroundColor = adData['color'].split('|')[1];
+          var flipColor = adData['color'].split('|').length > 2 ? adData['color'].split('|')[2].toLowerCase() : 'white';
+          if(flipColor === 'white' || flipColor === '#fff' || flipColor === '#ffffff') {
+            
+          } else {
+            // ad.layers.cta.style.color = '#0078d4';
+          }
+          gsap.delayedCall(0.5, function(){ gsap.set('.ad-borders',  {css:{zIndex: 100}}); });
+
+          var levelWords = function(elements) {
+            var lines = 0, lastX = -10000;
+            elements.forEach(function(element) {
+              var words = element.querySelectorAll('t');
+              words.forEach(function(word){
+                if(word.offsetTop != lastX) { 
+                  lines++; 
+                  lastX = word.offsetTop 
+                }
+                word.classList.add('line');
+                word.classList.add('line' + lines);
+                word.line = lines;
+              });
+              lastX = -10000;
+            });
+            return lines;
+          }
+          var blockToWords = function(element){
+		        if(element) {
+              var isJP = /[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/.test(element.innerHTML)
+		          element.dataset.content = element.innerHTML;
+		          element.dataset.height = element.style.height;
+		          var htmlTags = element.innerHTML.match(/\<.*?\>/g);
+		          htmlTags = htmlTags && htmlTags.length ? htmlTags : [];
+		          var text = element.innerHTML.split(/\<.*?\>/g);
+		          text = text.map(function(subText){
+		            return subText.split(isJP ? '<br>': ' ').map(function(word){ return word ? ('<t>' + word + '</t>') : ''; }).join(isJP ? '<br>': ' ');
+		          });
+		          var longList = text, shortList = htmlTags, temp;
+		          if(longList.length < shortList) { temp = longList; longList = shortList; shortList = temp; }
+		          shortList.push('');
+		          element.innerHTML = longList.map(function(text1, i) { return text1 + shortList[i]; }).join('');
+		        }
+		      }
+		      var wordsToBlock = function(element) {
+		        if(element) {
+		          var wordChanges = element.querySelectorAll('t.br');
+		          if(wordChanges && wordChanges.length) {
+		            wordChanges.forEach(function(word){
+		              word.parentNode.insertBefore(document.createElement('br'), word);
+		              word.removeAttribute('class');
+		            });
+		          }
+		          element.innerHTML = element.innerHTML.split(/\<t style=\"\"\>/g).join('').split(/\<t\>/g).join('').split(/\<\/t\>/g).join('');
+		        }
+		      }
+
+          var headline = ad.root.querySelector('#headlineText');
+          var subheadline = ad.root.querySelector('#subheadlineText');
+          var isheadline = Boolean(headline.innerHTML.toLowerCase() !== 'na');
+          var issubheadline = Boolean(subheadline.innerHTML.toLowerCase() !== 'na');
+          blockToWords(headline);
+          blockToWords(subheadline);
+          var blocks = [];
+          if(isheadline) blocks.push(headline);
+          if(issubheadline) blocks.push(subheadline);
+          var lines = levelWords(blocks);
+          var headlineLines = ad.root.querySelectorAll('#headlineText .line:last-child')[0].line;
+          var resetHTML = function() {
+            headline.querySelectorAll('t').forEach(function(t){
+              t.removeAttribute('class');
+              t.removeAttribute('style');
+            });
+            subheadline.querySelectorAll('t').forEach(function(t){
+              t.removeAttribute('class');
+              t.removeAttribute('style');
+            });
+            wordsToBlock(headline);
+            wordsToBlock(subheadline);
+          }
+
+          gsap.set('#cta, #ctaArrow', {x: 30})
+          for(var i = 1; i <= lines; i++) {
+            var line = ad.root.querySelectorAll('.line' + i);
+            gsap.set(line, {autoAlpha: 0, y: line[0].offsetHeight * 1.2, display:'inline-block'})
+          }
+
+
+          var timeline = gsap.timeline({defaults: {ease: "power2.Out", duration:1}})
+          timeline.add(gsap.to(ad.root.querySelectorAll('t'), { autoAlpha: 0, delay: 0.5 }));
+          for(var i = 1; i <= lines; i++) {
+            timeline.add(gsap.to(ad.root.querySelectorAll('.line' + i), { autoAlpha: 1, y: 0, delay: ((i - 1) == headlineLines ? 0.5 : 0) }), '-=0.2');
+            if(i === lines) {
+              timeline.add(gsap.to('#cta, #ctaArrow', { x: 0, duration: 0.5 }), '-=0.5');
+              timeline.add(function(){ gsap.delayedCall(1, resetHTML); });
+            }
+          }
+
+          var getElementText = function(adData, event) {
+            let elemID = event.target.id || event.target.parentElement.id || event.target.parentElement.parentElement.id;
+            switch(elemID) {
+
+              case 'headlineText':
+              return `Headline|${(adData.display_advertiser_category_name !== undefined) ? adData.display_advertiser_category_name : 'Gen_Free Account_CodeExpBuildApps+12mo|Male_Female_A'}`;
+              break;
+
+              case 'subheadlineText':
+              return `SubHeadline|${(adData.display_advertiser_category_name !== undefined) ? adData.display_advertiser_category_name : 'Gen_Free Account_CodeExpBuildApps+12mo|Male_Female_A'}`;
+              break;
+
+              case 'ctaTextElem':
+              return `CTA|${adData.ctaText}`;
+              break;
+
+              default:
+              return `Background|${(adData.display_advertiser_category_name !== undefined) ? adData.display_advertiser_category_name : 'Gen_Free Account_CodeExpBuildApps+12mo|Male_Female_A'}`;
+            }
+          }
+
+        });
+      }
+      const fonts = ['SegoePro-Semibold'];
+      if("fonts" in document && fonts.length) Promise.all(fonts.map(function(font) { return document.fonts.load("1rem " + font) })).then(setupAd);
+      else setTimeout(setupAd, 2000);
+    </script>
+  
+
+</body></html>
