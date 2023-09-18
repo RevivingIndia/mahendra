@@ -10,7 +10,7 @@ urlpatterns = [
     path('updatesensorData/',views.updatesensorData.as_view()),
     #delete
     path('deletesensorData/<sensor_id>/',views.deletesensorData.as_view()),
-    #notify
+    #notification
     path('notifyUser/',views.notifyUser.as_view()),
 
 ]
