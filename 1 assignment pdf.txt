@@ -1,0 +1,17 @@
+1. Write a program to find the length of list.
+2. Write a program to find the length of each element of list.
+3. Write a program to find the even no. and odd no. .
+4. Write a program to find the unique element from list.
+5. Write a program to find thegiven string is palindrome or not.
+6. Write a program to print the natural number (1 to 10) and if it is even no. multiply with 100.
+7. Write a program to find the max and min element in list.
+8. Write a program to sort the element of list in ascending and descending order .
+9. Write a program to show concatenation of int and string.
+10. Write a program to find the keys whose values is greater than 100.
+11. Write a program to find the keys and values from dictionary.
+12. Write a program to insert any element at the end of list.
+       * single element 
+       * multiple element 
+13. Write a program to modify the elements of tuple using typecasting.
+14. Write a program to delete any element from set.
+15. Write a program to show difference between pop and remove.
