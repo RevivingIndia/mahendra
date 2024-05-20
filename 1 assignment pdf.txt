@@ -8,10 +8,4 @@
 8. Write a program to sort the element of list in ascending and descending order .
 9. Write a program to show concatenation of int and string.
 10. Write a program to find the keys whose values is greater than 100.
-11. Write a program to find the keys and values from dictionary.
-12. Write a program to insert any element at the end of list.
-       * single element 
-       * multiple element 
-13. Write a program to modify the elements of tuple using typecasting.
-14. Write a program to delete any element from set.
-15. Write a program to show difference between pop and remove.
+11. Write a program to find the keys and values from dictionar
